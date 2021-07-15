@@ -1,21 +1,27 @@
 package com.Bank;
 
-public class BankTransaction {
-    private String accountNumber;
+public class Customer {
+    private int accountNumber;
     private float balance;
     private String customerName;
     private String emailAddress;
     private String phoneNumber;
 
 
-    BankTransaction(){}
-    public String getAccountNumber() {
+    Customer(String customerName, String phoneNumber, String emailAddress){
+        this.customerName = customerName;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.balance = 50;
+        this.accountNumber = (int)(Math.random() *(200000 - 100000 + 1)) + 100000;
+    }
+    public int getAccountNumber() {
         return accountNumber;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
-    }
+    //public void setAccountNumber(int accountNumber) {
+    //    this.accountNumber = accountNumber;
+    //}
 
     public String getCustomerName() {
         return customerName;
@@ -61,14 +67,6 @@ public class BankTransaction {
         else{
             System.out.println("Insufficient amount. Cannot withdraw." );
         }
-    }
-    public void customerInfo(){
-        System.out.println("Customer Name: " + this.customerName);
-        System.out.println("Account Number: " + this.accountNumber);
-        System.out.println("Balance: " + this.balance);
-        System.out.println("Email: " + this.emailAddress);
-        System.out.println("Phone Number:" + this.phoneNumber);
-
     }
 
 }
