@@ -7,7 +7,8 @@ public class Main {
     public static void main(String[] args) {
 
         // create bank customer database
-        CustomerDAO customerDAO = new CustomerDAO();
+        //CustomerDAO customerDAO = new CustomerDAO();   //hashmap model
+        CustomerMySQL customerDAO = new CustomerMySQL(); //MySQL model
         Scanner sc = new Scanner(System.in);
         String customerName;
         String emailAddress;
@@ -21,7 +22,8 @@ public class Main {
             phoneNumber = sc.nextLine();
             System.out.println("Please input customer email address:");
             emailAddress = sc.nextLine();
-            customerDAO.addCustomer(customerName, phoneNumber, emailAddress);
+            Customer customer = new Customer(customerName, phoneNumber, emailAddress);
+            customerDAO.addCustomer(customer);
             System.out.println("Would you like to add more customer?(Y/N)");
             flag = sc.nextLine();
         }

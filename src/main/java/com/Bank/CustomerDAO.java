@@ -7,8 +7,7 @@ public class CustomerDAO implements CustomerDAOInterface{
 
     // Add new customer to map <accountNumber, customer>
     @Override
-    public void addCustomer(String customerName, String phoneNumber, String emailAddress){
-        Customer customer = new Customer(customerName,phoneNumber, emailAddress);
+    public void addCustomer(Customer customer){
         customerList.put(customer.getAccountNumber(), customer);
     }
 
@@ -71,8 +70,9 @@ public class CustomerDAO implements CustomerDAOInterface{
 
     //Display account balance
     @Override
-    public void displayBalance(int accountNumber){
+    public Float displayBalance(int accountNumber){
         System.out.println("Balance: " + customerList.get(accountNumber).getBalance());
+        return customerList.get(accountNumber).getBalance();
 
     }
     //Deposit Money - Don't allow user to deposit less than $5 and more than $10000

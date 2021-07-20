@@ -15,13 +15,17 @@ public class Customer {
         this.balance = 50;
         this.accountNumber = (int)(Math.random() *(200000 - 100000 + 1)) + 100000;
     }
+    Customer(String customerName, String phoneNumber, String emailAddress, float balance, int accountNumber){
+        this.customerName = customerName;
+        this.phoneNumber = phoneNumber;
+        this.emailAddress = emailAddress;
+        this.balance = balance;
+        this.accountNumber = accountNumber;
+    }
     public int getAccountNumber() {
         return accountNumber;
     }
 
-    //public void setAccountNumber(int accountNumber) {
-    //    this.accountNumber = accountNumber;
-    //}
 
     public String getCustomerName() {
         return customerName;
